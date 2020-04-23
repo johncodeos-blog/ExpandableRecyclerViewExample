@@ -19,7 +19,8 @@ class RVAdapter(private val itemsCells: ArrayList<DataModel>) :
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_cell, parent, false)
+        val v =
+            LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_cell, parent, false)
         val vh = ViewHolder(v)
         context = parent.context
         return vh

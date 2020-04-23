@@ -37,7 +37,12 @@ class ExpandableLayout : LinearLayout {
         init(attrs)
     }
 
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {}
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
+    }
 
     private fun init(attrs: AttributeSet?) {
         isClickable = true
@@ -47,9 +52,12 @@ class ExpandableLayout : LinearLayout {
         mExpandState = PREINIT
         if (attrs != null) {
             val typedArray = context.obtainStyledAttributes(attrs, R.styleable.ExpandableLayout)
-            mExpandDuration = typedArray.getInt(R.styleable.ExpandableLayout_expDuration, EXPAND_DURATION)
-            mExpandWithParentScroll = typedArray.getBoolean(R.styleable.ExpandableLayout_expWithParentScroll, false)
-            mExpandScrollTogether = typedArray.getBoolean(R.styleable.ExpandableLayout_expExpandScrollTogether, false)
+            mExpandDuration =
+                typedArray.getInt(R.styleable.ExpandableLayout_expDuration, EXPAND_DURATION)
+            mExpandWithParentScroll =
+                typedArray.getBoolean(R.styleable.ExpandableLayout_expWithParentScroll, false)
+            mExpandScrollTogether =
+                typedArray.getBoolean(R.styleable.ExpandableLayout_expExpandScrollTogether, false)
             typedArray.recycle()
         }
     }
@@ -73,7 +81,8 @@ class ExpandableLayout : LinearLayout {
 
     private fun verticalAnimate(startHeight: Int, endHeight: Int) {
         val mViewParent = parent as ViewGroup
-        val distance = (y + measuredHeight + mExpandedViewHeight - mViewParent.measuredHeight).toInt()
+        val distance =
+            (y + measuredHeight + mExpandedViewHeight - mViewParent.measuredHeight).toInt()
         val target = getChildAt(1)
         mExpandAnimator = ValueAnimator.ofInt(startHeight, endHeight)
         mExpandAnimator?.addUpdateListener(AnimatorUpdateListener { animation ->
