@@ -5,7 +5,6 @@ import android.content.Context
 import android.graphics.Typeface
 import android.os.Build
 import android.util.DisplayMetrics
-import android.util.Log
 import android.util.TypedValue
 import android.view.*
 import android.widget.TextView
@@ -47,9 +46,6 @@ class RVAdapter(
 
         // Expand/Collapse the answer TextView when you tap on the question TextView
         holder.itemView.question_textview.setOnClickListener {
-
-
-            Log.d("last Tapped Cell is: ", lastTappedCell.toString())
 
 
             if (expandedSize[position] == 0) {
@@ -137,3 +133,5 @@ class RVAdapter(
     }
 
 }
+
+
