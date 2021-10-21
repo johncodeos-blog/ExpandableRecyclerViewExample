@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private var itemsData = ArrayList<DataModel>()
-    private var expandedSize =  ArrayList<Int>()
+    private var expandedSize = ArrayList<Int>()
 
     private lateinit var adapter: RVAdapter
 
